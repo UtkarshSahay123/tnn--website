@@ -20,9 +20,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="black" className=" scroll-smooth">
+    <html
+      lang="en"
+      data-theme="black"
+      className=" scroll-smooth"
+      suppressHydrationWarning
+    >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-0 min-h-full text-justify scroll-smooth`}
+        suppressHydrationWarning
       >
         <HomeNavbar />
         <div className="p-10">{children}</div>
