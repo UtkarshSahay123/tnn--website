@@ -66,11 +66,11 @@ export function Advantages() {
         "Our kind and helpful committee offers technical assistance if you need help with your personal projects.",
       ],
       bullets: [
-        "Card grid component",
-        "Startup template Aceternity",
-        "Random file upload lol",
-        "Himesh Reshammiya Music CD",
-        "Salman Bhai Fan Club registrations open",
+        "Project guidance and code reviews",
+        "Debugging support for web and app development",
+        "Hackathon and competition mentorship",
+        "Peer learning sessions for new technologies",
+        "Hands-on support for turning ideas into working projects",
       ],
       images: [
         {

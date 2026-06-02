@@ -7,15 +7,7 @@ function page() {
       <div className="p-10">
         <div className="text-2xl font-semibold ">Our Origin Story:</div>
         <div className="mt-5">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book. It has survived not
-          only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum
+         Team Next Nexus is a community of builders, researchers, and problem-solvers driven by curiosity and execution. Over the years, our members have contributed to research publications, built impactful technical projects, and gone on to secure roles at leading high-paying companies. As a club, we continue to design, develop, and ship real-world solutions, including the official VITOPIA 2025 website, while also serving as a major contributor to V-Launchpad. Our goal is to create a space where students learn by building, collaborate across domains, and turn ideas into working products.
         </div>
       </div>
 
