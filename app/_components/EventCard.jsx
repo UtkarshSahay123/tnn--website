@@ -1,39 +1,57 @@
+"use client";
+
 import Link from "next/link";
 
-function EventCard({ event }) {
+function EventCard({ event, index = 0 }) {
   return (
-    <div className="card bg-base-300 w-96 shadow-sm">
-      <figure>
-        <img src={event.image} alt={event.name} />
+    <article
+      className="event-tech-card group w-full max-w-[480px]"
+      style={{ animationDelay: `${index * 90}ms` }}
+    >
+      <figure className="event-tech-poster">
+        {event.image ? (
+          <img
+            src={event.image}
+            alt={event.name}
+            className="h-full w-full object-contain transition duration-700 group-hover:scale-[1.035]"
+          />
+        ) : (
+          <span className="px-6 text-center text-sm text-gray-500">
+            Event poster
+          </span>
+        )}
+        <div className="event-tech-scan" />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">
-          {event.name}
+      <div className="relative z-10 flex flex-col gap-5 p-8">
+        <div className="flex flex-wrap items-center gap-3">
+          <h2 className="text-2xl font-bold leading-snug text-white">
+            {event.name}
+          </h2>
           {event.isNew && <div className="badge badge-secondary">NEW</div>}
-        </h2>
-        <p>{event.description}</p>
+        </div>
+        <p className="line-clamp-5 text-lg leading-relaxed text-gray-100">
+          {event.description}
+        </p>
 
-        <div className="card-actions justify-end">
-          <div className="flex flex-col gap-2">
-            <div className="flex gap-2 flex-wrap">
-              {event.tags?.map((tag, idx) => (
-                <div
-                  key={idx}
-                  className={`badge badge-outline ${
-                    tag === "Monetized" ? "badge-success" : ""
-                  }`}
-                >
+        <div className="flex flex-col gap-4">
+          {event.tags?.length ? (
+            <div className="flex flex-wrap gap-2">
+              {event.tags.map((tag, idx) => (
+                <span key={idx} className="event-tech-chip">
                   {tag}
-                </div>
+                </span>
               ))}
             </div>
-            <Link className="btn btn-primary" href={`/events/${event.id}`}>
+          ) : null}
+
+          <div className="flex justify-end">
+            <Link className="event-tech-link" href={`/events/${event.id}`}>
               See Details
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

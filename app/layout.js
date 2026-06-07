@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { HomeNavbar } from "./_components/HomeNavbar.jsx";
 import Footer from "./_components/Footer.jsx";
+import PageVisitAnimation from "./_components/PageVisitAnimation.jsx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-0 min-h-full text-justify scroll-smooth`}
         suppressHydrationWarning
       >
+        <PageVisitAnimation />
         <HomeNavbar />
         <div className="p-10">{children}</div>
         <Footer />

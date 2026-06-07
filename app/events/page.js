@@ -3,24 +3,31 @@ import EventButtonGroup from "../_components/EventButtonGroup";
 import EventCard from "../_components/EventCard";
 import EventSort from "../_components/EventSort";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page({ searchParams }) {
-  const filter = searchParams.status || "upcoming";
-  const sortBy = searchParams["sort-by"] || "latest";
+  const params = await searchParams;
+  const filter = params.status || "upcoming";
+  const sortBy = params["sort-by"] || "latest";
 
   const events = await getEvents({ status: filter, sortBy });
 
   return (
-    <div className="flex flex-col gap-10 p-10">
-      <div className="text-7xl text-center m-10 font-bold">Events</div>
-      <div className="flex flex-row justify-end gap-5">
+    <div className="flex flex-col gap-10 px-2 py-8 md:p-10">
+      <div className="text-center text-6xl font-bold md:m-10 md:text-7xl">
+        Events
+      </div>
+      <div className="flex flex-col justify-end gap-5 md:flex-row">
         <EventButtonGroup />
         <EventSort />
       </div>
-      <div className="flex flex-row mt-10 gap-10 flex-wrap flex-3 justify-center">
+      <div className="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-3">
         {events.length === 0 ? (
-          <p className="text-gray-500">No events found.</p>
+          <p className="col-span-full text-gray-500">No events found.</p>
         ) : (
-          events.map((event) => <EventCard key={event.id} event={event} />)
+          events.map((event, index) => (
+            <EventCard key={event.id} event={event} index={index} />
+          ))
         )}
       </div>
     </div>
