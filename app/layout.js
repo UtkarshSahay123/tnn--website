@@ -3,6 +3,7 @@ import "./globals.css";
 import { HomeNavbar } from "./_components/HomeNavbar.jsx";
 import Footer from "./_components/Footer.jsx";
 import PageVisitAnimation from "./_components/PageVisitAnimation.jsx";
+import { RouteBackgroundLogo } from "./_components/RouteBackgroundLogo.jsx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,12 +29,13 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased p-0 min-h-full text-justify scroll-smooth`}
+        className={`${geistSans.variable} ${geistMono.variable} relative antialiased p-0 min-h-full text-justify scroll-smooth`}
         suppressHydrationWarning
       >
         <PageVisitAnimation />
+        <RouteBackgroundLogo />
         <HomeNavbar />
-        <div className="p-10">{children}</div>
+        <div className="relative z-10 p-10">{children}</div>
         <Footer />
       </body>
     </html>

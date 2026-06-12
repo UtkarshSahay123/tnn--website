@@ -13,20 +13,20 @@ export function Advantages() {
       ],
       images: [
         {
-          src: "https://assets.aceternity.com/templates/startup-1.webp",
-          alt: "startup template",
+          src: "/sample/solar2.png",
+          alt: "solar analyzer",
         },
         {
-          src: "https://assets.aceternity.com/templates/startup-2.webp",
-          alt: "startup template",
+          src: "/sample/solar3.png",
+          alt: "solar analyzer",
         },
         {
-          src: "https://assets.aceternity.com/templates/startup-3.webp",
-          alt: "startup template",
+          src: "/sample/solar4.png",
+          alt: "solar analyzer",
         },
         {
-          src: "https://assets.aceternity.com/templates/startup-4.webp",
-          alt: "startup template",
+          src: "/sample/solar1.png",
+          alt: "solar analyzer",
         },
       ],
     },
@@ -40,20 +40,20 @@ export function Advantages() {
       ],
       images: [
         {
-          src: "https://assets.aceternity.com/pro/hero-sections.png",
-          alt: "hero template",
+          src: "/sample/supaedited.png",
+          alt: "supabase workshop",
         },
         {
-          src: "https://assets.aceternity.com/features-section.png",
-          alt: "feature template",
+          src: "/sample/firebase.png",
+          alt: "Firebase workshop",
         },
         {
-          src: "https://assets.aceternity.com/pro/bento-grids.png",
-          alt: "bento template",
+          src: "/events/java2.png",
+          alt: "Java workshop 2",
         },
         {
-          src: "https://assets.aceternity.com/cards.png",
-          alt: "cards template",
+          src: "/events/java3.png",
+          alt: "Java workshop 3",
         },
       ],
     },
@@ -74,20 +74,20 @@ export function Advantages() {
       ],
       images: [
         {
-          src: "https://assets.aceternity.com/pro/hero-sections.png",
-          alt: "hero template",
+          src: "/events/ml.png",
+          alt: "Machine Learning workshop",
         },
         {
-          src: "https://assets.aceternity.com/features-section.png",
-          alt: "feature template",
+          src: "/events/promptus.png",
+          alt: "Promptus workshop",
         },
         {
-          src: "https://assets.aceternity.com/pro/bento-grids.png",
-          alt: "bento template",
+          src: "/events/xploring.png",
+          alt: "Web development workshop",
         },
         {
-          src: "https://assets.aceternity.com/cards.png",
-          alt: "cards template",
+          src: "/sample/webedited.png",
+          alt: "Web workshop 2",
         },
       ],
     },
