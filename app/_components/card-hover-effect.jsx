@@ -1,31 +1,33 @@
 "use client";
+
 import { cn } from "@/app/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export const HoverEffect = ({ items, className, team }) => {
-  let [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
         className
       )}
     >
       {items.map((item, idx) => (
-        <a
-          href={`${team}/${item.id}`}
-          key={item?.id}
-          className="relative group  block p-2 h-full w-full"
+        <Link
+          href={`/teams/${encodeURIComponent(team)}/${item.id}`}
+          key={item.id}
+          className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -39,14 +41,23 @@ export const HoverEffect = ({ items, className, team }) => {
               />
             )}
           </AnimatePresence>
+
           <Card>
             <div className="flex justify-center items-center">
-              <CardImage>🖼️</CardImage>
+              <CardImage>
+                <Image
+                  src={item.image || "/TNN_LOGO.png"}
+                  alt={`${item.name} profile photo`}
+                  fill
+                  sizes="200px"
+                  className="object-cover"
+                />
+              </CardImage>
             </div>
             <CardTitle>{item.name}</CardTitle>
             <CardDescription>{item.position}</CardDescription>
           </Card>
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -71,7 +82,7 @@ export const CardImage = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "h-50 w-50 bg-base-300 rounded-2xl flex justify-center items-center",
+        "relative h-50 w-50 overflow-hidden bg-base-300 rounded-2xl",
         className
       )}
     >
@@ -87,6 +98,7 @@ export const CardTitle = ({ className, children }) => {
     </h4>
   );
 };
+
 export const CardDescription = ({ className, children }) => {
   return (
     <p

@@ -1,47 +1,78 @@
+"use client";
+
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+const eventImages = [
+  "bug.png",
+  "code.png",
+  "codecraft.png",
+  "cyberdog.png",
+  "design.png",
+  "email.png",
+  "ethic.png",
+  "events.png",
+  "firebase.png",
+  "freshers.png",
+  "git.png",
+  "guest.png",
+  "java1.png",
+  "java2.png",
+  "java3.png",
+  "ml.png",
+  "per.png",
+  "promptus.png",
+  "pyday.png",
+  "supa.png",
+  "trinity.png",
+  "ux.png",
+  "web.png",
+  "xploring.png",
+].map((image) => `/events/${image}`);
+
 function Carousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % eventImages.length);
+    }, 2500);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
-    <>
-      <div className="carousel w-full">
-        <div id="item1" className="carousel-item w-full">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-            className="w-full"
+    <div className="w-full">
+      <div className="relative h-[260px] w-full overflow-hidden rounded-2xl bg-black shadow-xl md:h-[430px]">
+        {eventImages.map((image, index) => (
+          <Image
+            key={image}
+            src={image}
+            alt={`Event highlight ${index + 1}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 90vw"
+            priority={index === 0}
+            className={`object-contain transition-opacity duration-700 ${
+              index === activeIndex ? "opacity-100" : "opacity-0"
+            }`}
           />
-        </div>
-        <div id="item2" className="carousel-item w-full">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-            className="w-full"
-          />
-        </div>
-        <div id="item3" className="carousel-item w-full">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-            className="w-full"
-          />
-        </div>
-        <div id="item4" className="carousel-item w-full">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-            className="w-full"
-          />
-        </div>
+        ))}
       </div>
-      <div className="flex w-full justify-center gap-2 py-2">
-        <a href="#item1" className="btn btn-xs">
-          1
-        </a>
-        <a href="#item2" className="btn btn-xs">
-          2
-        </a>
-        <a href="#item3" className="btn btn-xs">
-          3
-        </a>
-        <a href="#item4" className="btn btn-xs">
-          4
-        </a>
+
+      <div className="mt-4 flex w-full flex-wrap justify-center gap-2">
+        {eventImages.map((image, index) => (
+          <button
+            key={image}
+            type="button"
+            aria-label={`Show event highlight ${index + 1}`}
+            onClick={() => setActiveIndex(index)}
+            className={`h-2.5 w-2.5 rounded-full transition ${
+              index === activeIndex ? "bg-white" : "bg-white/35"
+            }`}
+          />
+        ))}
       </div>
-    </>
+    </div>
   );
 }
 

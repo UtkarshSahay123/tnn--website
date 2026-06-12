@@ -13,14 +13,14 @@ export async function generateStaticParams() {
 }
 
 async function page({ params }) {
-  const teamMembers = await getTeamMembers(params.team);
-  const description = await getTeamDescription(params.team);
-  console.log(teamMembers);
-  const team = await params.team;
+  const { team } = await params;
+  const teamMembers = await getTeamMembers(team);
+  const description = await getTeamDescription(team);
+
   return (
     <div className="flex flex-col p-10 gap-10">
       <div className="text-7xl text-center m-10 font-bold">
-        {capitalize(params.team)} Team
+        {capitalize(team)} Team
       </div>
       <div className="text-xl">{description}</div>
       <div className="flex justify-center mt-10 text-2xl flex-col gap-10 items-center ">

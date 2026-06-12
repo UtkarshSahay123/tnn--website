@@ -1,11 +1,17 @@
 import { MemberIdCard } from "@/app/app/_components/MemberIdCard";
 import { getMemberDetails } from "@/app/lib/data-service";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 async function Page({ params }) {
-  const memberDetails = await getMemberDetails(params.memberId);
-  const { name, position, linkedin, email, instagram, twitter, github, team, id } =
-    memberDetails;
+  const { memberId } = await params;
+  const memberDetails = await getMemberDetails(memberId);
+
+  if (!memberDetails) {
+    notFound();
+  }
+
+  const { team } = memberDetails;
 
   return (
     <div className="flex flex-col items-center justify-center">

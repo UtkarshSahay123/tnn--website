@@ -67,20 +67,20 @@ export default function Page() {
         <div className="stats stats-vertical lg:stats-horizontal shadow ">
           <div className="stat">
             <div className="stat-title">Events Conducted</div>
-            <div className="stat-value">40</div>
+            <div className="stat-value">26</div>
             <div className="stat-desc">Jan 1st - Feb 1st</div>
           </div>
 
           <div className="stat">
             <div className="stat-title">Participants</div>
-            <div className="stat-value">4,200</div>
-            <div className="stat-desc">↗︎ 400 (22%)</div>
+            <div className="stat-value">3000</div>
+            
           </div>
 
           <div className="stat">
             <div className="stat-title">Prizes awarded</div>
-            <div className="stat-value text-success">₹50,000</div>
-            <div className="stat-desc">↘︎ 90 (14%)</div>
+            <div className="stat-value text-success">₹20,000</div>
+            
           </div>
         </div>
       </div>

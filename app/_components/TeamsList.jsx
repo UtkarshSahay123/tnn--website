@@ -6,7 +6,12 @@ async function TeamsList() {
   return (
     <div className="flex gap-5 flex-wrap self-center justify-center  mt-5">
       {teams.map((t) => (
-        <TeamCard name={t.name} description={t.description} key={t.name} />
+        <TeamCard
+          name={t.name}
+          description={t.description}
+          image={t.image}
+          key={t.name}
+        />
       ))}
     </div>
   );

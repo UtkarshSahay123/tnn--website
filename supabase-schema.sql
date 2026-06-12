@@ -10,6 +10,7 @@ create table if not exists public.members (
   name text not null,
   position text not null default '',
   team text not null references public.teams(name) on update cascade on delete cascade,
+  image text,
   linkedin text,
   email text,
   instagram text,
