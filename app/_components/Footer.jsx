@@ -36,6 +36,15 @@ function Footer() {
               className="h-8 w-8 object-contain"
             />
           </a>
+
+          <a href = 'https://github.com/UtkarshSahay123/tnn--website' aria-label="GitHub">
+            <img
+              src="/sample/github.png"
+              alt="GitHub"
+              className="h-8 w-8 object-contain"
+            />
+          </a>
+
         </div>
       </nav>
       <aside>
