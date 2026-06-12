@@ -34,7 +34,7 @@ export const TypewriterEffectSmooth = ({
       <motion.div
         className="overflow-hidden pb-2 inline-block"
         initial={{ width: 0 }}
-        whileInView={{ width: "auto" }}
+        animate={{ width: "auto" }}
         transition={{ duration: 1.8, ease: "linear", delay: 0.2 }}
       >
         <div

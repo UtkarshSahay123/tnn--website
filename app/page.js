@@ -15,7 +15,7 @@ export default function Page() {
         backgroundColor="black"
         className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-screen"
       >
-        <div className="flex flex-col justify-center items-center h-full gap-6">
+        <div className="relative z-10 flex flex-col justify-center items-center h-full gap-6">
           <h1
             className="bg-clip-text text-transparent text-center 
       bg-gradient-to-b from-neutral-900 to-neutral-700 
@@ -29,7 +29,7 @@ export default function Page() {
           <HeroHome />
         </div>
 
-        <div className="flex justify-center mt-10">
+        <div className="relative z-10 flex justify-center mt-10">
           <Link
             href="#first"
             className="text-xl md:text-2xl font-semibold hover:text-purple-500 transition"
