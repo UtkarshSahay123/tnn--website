@@ -13,7 +13,6 @@ export function MemberIdCard({ memberDetails }) {
     twitter,
     github,
     team,
-    id,
     image,
   } = memberDetails;
 
@@ -76,9 +75,6 @@ export function MemberIdCard({ memberDetails }) {
 
           <div className="mt-2 flex flex-shrink-0 items-center justify-between p-4 font-mono text-white">
             <div className="text-xs">TeamNextNexus</div>
-            <div className="text-xs text-gray-300 opacity-50">
-              Member Id: {id}
-            </div>
           </div>
         </div>
       </button>
