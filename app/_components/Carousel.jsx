@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const eventImages = [
+  "mohitsir.png",
   "bug.png",
   "code.png",
   "codecraft.png",
