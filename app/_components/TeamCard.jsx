@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { capitalize } from "../_helper/capitalize";
 
 import React from "react";
 import {
@@ -18,7 +17,7 @@ export function TeamCard({ name, description, image }) {
           translateZ="50"
           className="text-xl font-bold text-neutral-600 dark:text-white"
         >
-          {capitalize(name)} Team
+          {name}
         </CardItem>
         <CardItem
           as="p"

@@ -1,6 +1,5 @@
 import { CometCard } from "@/app/app/_components/comet-card";
 import SocialLinks from "./SocialLinks";
-import { capitalize } from "../_helper/capitalize";
 import Image from "next/image";
 
 export function MemberIdCard({ memberDetails }) {
@@ -60,7 +59,7 @@ export function MemberIdCard({ memberDetails }) {
           </div>
 
           <div className="mt-2 text-3xl font-semibold">{name}</div>
-          <div className="mt-2">{capitalize(team)} Team</div>
+          <div className="mt-2">{team}</div>
           <div className="text-lg">{position}</div>
 
           <div className="px-5 my-2">

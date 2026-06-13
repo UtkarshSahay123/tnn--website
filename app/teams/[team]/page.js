@@ -4,7 +4,6 @@ import {
   getTeams,
 } from "@/app/lib/data-service";
 import MembersList from "../../_components/MembersList";
-import { capitalize } from "../../_helper/capitalize";
 
 export async function generateStaticParams() {
   const teams = await getTeams();
@@ -21,7 +20,7 @@ async function page({ params }) {
   return (
     <div className="flex flex-col p-10 gap-10">
       <div className="text-7xl text-center m-10 font-bold">
-        {capitalize(teamName)} Team
+        {teamName}
       </div>
       <div className="text-xl">{description}</div>
       <div className="flex justify-center mt-10 text-2xl flex-col gap-10 items-center ">
