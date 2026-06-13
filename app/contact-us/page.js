@@ -25,12 +25,24 @@ function page() {
         <br></br>
 
 
+        <div>
+          <a href ='mailto:nextnexus.club@vitap.ac.in'>
+          <img src = '/sample/gmail.png' alt = 'Gmail' className="w-10 h-10 inline-block mr-2"/>
+          </a>
+          <a href = 'mailto:nextnexus.club@vitap.ac.in'>Gmail</a>
+        </div>
+
+
+        <br></br>
+
+
         <a href = 'https://www.instagram.com/tnn_vitap/'>
         <div>
           <img src = '/sample/instagram.png' alt = 'Instagram' className="w-10 h-10 inline-block mr-2"/>
           Instagram
         </div>
-        </a>   
+        </a>
+        <br></br>   
       </div>
     </div>
   );
